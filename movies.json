@@ -1,0 +1,132 @@
+[
+    {
+      "title": "Finding Nemo",
+      "directors": ["Andrew Stanton", "Lee Unkrich"],
+      "actors": [
+        {"name": "Albert Brooks", "role": "Marlin (clownfish)"},
+        {"name": "Ellen DeGeneres", "role": "Dory (blue tang fish)"},
+        {"name": "Alexander Gould", "role": "Nemo (clownfish)"},
+        {"name": "Willem Dafoe", "role": "Gill (moorish idol fish)"},
+        {"name": "Brad Garrett", "role": "Bloat (porcupine puffer fish)"},
+        {"name": "Allison Janney", "role": "Peach (starfish)"},
+        {"name": "Austin Pendleton", "role": "Gurgle (royal gramma fish)"},
+        {"name": "Stephen Root", "role": "Bubbles (yellow tang fish)"},
+        {"name": "Vicki Lewis", "role": "Deb/Flo (striped damselfish)"},
+        {"name": "Joe Ranft", "role": "Jacques (cleaner shrimp)"}
+      ],
+      "genre": ["animated", "adventure", "comedy"],
+      "subgenre": ["family", "fantasy"],
+      "releaseYear": 2003,
+      "ratings": "G",
+      "runtime": "100 minutes",
+      "productionCo": "Pixar Animation Studios",
+      "plotSummary": "This animated adventure follows the journey of Marlin, a clownfish, as he searches for his son Nemo who has been captured by a diver and taken to a dentist's office aquarium. Along the way, Marlin encounters Dory, a friendly but forgetful blue tang fish, and together they embark on a remarkable oceanic adventure filled with colorful characters, challenges, and heartwarming moments. 'Finding Nemo' is beloved by audiences of all ages for its stunning animation, engaging story, and messages of friendship, courage, and perseverance."
+    },
+    {
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "directors": ["Peter Jackson"],
+      "actors": [
+        {"name": "Elijah Wood", "role": "Frodo Baggins"},
+        {"name": "Ian McKellen", "role": "Gandalf"},
+        {"name": "Viggo Mortensen", "role": "Aragorn"},
+        {"name": "Sean Astin", "role": "Samwise Gamgee"},
+        {"name": "Orlando Bloom", "role": "Legolas"},
+        {"name": "Sean Bean", "role": "Boromir"},
+        {"name": "Ian Holm", "role": "Bilbo Baggins"},
+        {"name": "Liv Tyler", "role": "Arwen"},
+        {"name": "Cate Blanchett", "role": "Galadriel"}
+      ],
+      "genre": ["fantasy", "adventure"],
+      "subgenre": ["epic"],
+      "releaseYear": 2001,
+      "ratings": "PG-13",
+      "runtime": "178 minutes",
+      "productionCo": "New Line Cinema",
+      "plotSummary": "In the first installment of the epic fantasy trilogy, Frodo Baggins embarks on a perilous journey to destroy the One Ring and save Middle-earth from the dark lord Sauron. Alongside his loyal companions, Frodo faces numerous challenges and battles as they seek to fulfill their quest."
+    },
+    {
+      "title": "The Notebook",
+      "directors": ["Nick Cassavetes"],
+      "actors": [
+        {"name": "Ryan Gosling", "role": "Noah Calhoun"},
+        {"name": "Rachel McAdams", "role": "Allie Hamilton"},
+        {"name": "James Garner", "role": "Old Noah"},
+        {"name": "Gena Rowlands", "role": "Old Allie"},
+        {"name": "James Marsden", "role": "Lon Hammond Jr."},
+        {"name": "Kevin Connolly", "role": "Fin"}
+      ],
+      "genre": ["romance", "drama"],
+      "subgenre": ["period"],
+      "releaseYear": 2004,
+      "ratings": "PG-13",
+      "runtime": "123 minutes",
+      "productionCo": "New Line Cinema",
+      "plotSummary": "In this romantic drama, Noah Calhoun and Allie Hamilton fall deeply in love one summer in the 1940s, but are soon separated by societal pressures and World War II. Despite the obstacles, their love endures, as they reconnect years later and reflect on the enduring power of true love."
+    },
+    {
+      "title": "Avatar 2",
+      "directors": ["James Cameron"],
+      "actors": [],
+      "genre": ["science fiction", "action", "adventure"],
+      "subgenre": ["fantasy"],
+      "releaseYear": 2022,
+      "ratings": "Not yet rated",
+      "runtime": "Not available",
+      "productionCo": "20th Century Studios",
+      "plotSummary": "Jake Sully and Ney'tiri have formed a family and are doing everything to stay together. However, they must leave their home and explore the regions of Pandora. When an ancient threat resurfaces, Jake must fight a difficult war against the humans."
+    },
+    {
+      "title": "Top Gun: Maverick",
+      "directors": ["Joseph Kosinski"],
+      "actors": [
+        {"name": "Tom Cruise", "role": "Maverick"},
+        {"name": "Miles Teller", "role": "Bradley 'Rooster' Bradshaw"},
+        {"name": "Jennifer Connelly", "role": "Penny Benjamin"}
+      ],
+      "genre": ["action", "drama"],
+      "subgenre": ["military"],
+      "releaseYear": 2022,
+      "ratings": "Not yet rated",
+      "runtime": "Not available",
+      "productionCo": "Paramount Pictures"
+      ,"plotSummary": "In this sequel to the 1986 classic, Maverick returns to train a new generation of pilots, including Bradley 'Rooster' Bradshaw, the son of Maverick's late friend and Radar Intercept Officer, Nick 'Goose' Bradshaw. As Maverick confronts his past and navigates the challenges of the modern military, he must also inspire his trainees and earn their respect as a legendary fighter pilot."
+    },
+    {
+      "title": "Jurassic World: Dominion",
+      "directors": ["Colin Trevorrow"],
+      "actors": [
+        {"name": "Chris Pratt", "role": "Owen Grady"},
+        {"name": "Bryce Dallas Howard", "role": "Claire Dearing"},
+        {"name": "Jeff Goldblum", "role": "Ian Malcolm"},
+        {"name": "Laura Dern", "role": "Ellie Sattler"},
+        {"name": "Sam Neill", "role": "Alan Grant"}
+      ],
+      "genre": ["action", "adventure", "science fiction"],
+      "subgenre": ["thriller"],
+      "releaseYear": 2022,
+      "ratings": "Not yet rated",
+      "runtime": "Not available",
+      "productionCo": "Universal Pictures",
+      "plotSummary": "Set four years after the events of Jurassic World: Fallen Kingdom, Dominion continues the story of dinosaurs unleashed into the world. As humanity grapples with the consequences of their existence, Owen Grady and Claire Dearing return to Isla Nublar to rescue dinosaurs from an impending volcanic eruption, only to uncover a conspiracy that threatens the future of life on Earth."
+    },
+    {
+      "title": "The Batman",
+      "directors": ["Matt Reeves"],
+      "actors": [
+        {"name": "Robert Pattinson", "role": "Bruce Wayne / Batman"},
+        {"name": "Zoë Kravitz", "role": "Selina Kyle / Catwoman"},
+        {"name": "Paul Dano", "role": "Edward Nashton / The Riddler"},
+        {"name": "Jeffrey Wright", "role": "James Gordon"},
+        {"name": "Colin Farrell", "role": "Oswald Cobblepot / The Penguin"}
+      ],
+      "genre": ["action", "crime", "drama"],
+      "subgenre": ["superhero"],
+      "releaseYear": 2022,
+      "ratings": "Not yet rated",
+      "runtime": "Not available",
+      "productionCo": "Warner Bros. Pictures",
+      "plotSummary": "In this gritty reboot, Bruce Wayne, the vigilante known as Batman, investigates a series of gruesome murders in Gotham City, leading him to encounter a mysterious criminal known as The Riddler. As Batman delves deeper into the conspiracy, he confronts his own inner demons and forms unlikely alliances to save the city from chaos."
+    }
+  ]
+ 
+

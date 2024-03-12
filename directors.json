@@ -1,0 +1,69 @@
+{
+    "directors": [
+      {
+        "name": "Andrew Stanton",
+        "nationality": "American",
+        "dob": "December 3, 1965",
+        "awards": [
+          {"awardName": "Academy Award for Best Animated Feature", "year": 2009, "movie": "WALL-E"}
+        ],
+        "moviesDirected": ["Finding Nemo"]
+      },
+      {
+        "name": "Lee Unkrich",
+        "nationality": "American",
+        "dob": "August 8, 1967",
+        "awards": [
+          {"awardName": "Academy Award for Best Animated Feature", "year": 2011, "movie": "Toy Story 3"}
+        ],
+        "moviesDirected": ["Finding Nemo"]
+      },
+      {
+        "name": "Nick Cassavetes",
+        "nationality": "American",
+        "dob": "May 21, 1959",
+        "awards": [],
+        "moviesDirected": ["The Notebook"]
+      },
+      {
+        "name": "James Cameron",
+        "nationality": "Canadian",
+        "dob": "August 16, 1954",
+        "awards": [
+          {"awardName": "Academy Award for Best Director", "year": 1998, "movie": "Titanic"}
+        ],
+        "moviesDirected": ["Avatar 2"]
+      },
+      {
+        "name": "Peter Jackson",
+        "nationality": "New Zealander",
+        "dob": "October 31, 1961",
+        "awards": [
+          {"awardName": "Academy Award for Best Director", "year": 2003, "movie": "The Lord of the Rings: The Return of the King"}
+        ],
+        "moviesDirected": ["The Lord of the Rings: The Fellowship of the Ring"]
+      },
+      {
+        "name": "Joseph Kosinski",
+        "nationality": "American",
+        "dob": "May 3, 1974",
+        "awards": [],
+        "moviesDirected": ["Top Gun: Maverick"]
+      },
+      {
+        "name": "Colin Trevorrow",
+        "nationality": "American",
+        "dob": "September 13, 1976",
+        "awards": [],
+        "moviesDirected": ["Jurassic World: Dominion"]
+      },
+      {
+        "name": "Matt Reeves",
+        "nationality": "American",
+        "dob": "April 27, 1966",
+        "awards": [],
+        "moviesDirected": ["The Batman"]
+      }
+    ]
+  }
+  
