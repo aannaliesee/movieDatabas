@@ -1,18 +1,23 @@
 const express = require('express');
-const router = express.Router();
+const bodyParser = require('body-parser');
+const mongodb = require('./db/connect');
 
-const swaggerAutogen = require('swagger-autogen')();
+const port = process.env.PORT || 8080;
+const app = express();
 
-const doc = {
-    info: {
-        title: 'Movie Database',
-        description: 'Movie Database Api'
-},
-    host: '**',
-    schemes: ['https']
-};
+app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  })
+  .use('/', require('./routes'));
 
-const outputFile = './swagger.json';
-const endpointsFiles = ['./routes/index.js'];
-
-swaggerAutogen(outputFile, endpointsFiles, doc);
+mongodb.initDb((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
+  }
+});
