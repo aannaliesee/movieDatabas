@@ -13,6 +13,8 @@ const getAll = async (req, res) => {
     res.status(500).json({ error: 'There was an error while retrieving the directors.' });
   }
 };
+
+
 module.exports = {
   getAll,
   

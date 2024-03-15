@@ -13,6 +13,7 @@ const getAll = async (req, res) => {
     res.status(500).json({ error: 'There was an error while retrieving the the greatest movies of all time.' });
   }
 };
+
 module.exports = {
   getAll,
   
