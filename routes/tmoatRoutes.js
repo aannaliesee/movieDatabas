@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router();
-const actorControll = require('../controllers/tmoatController');
+const topMovieControll = require('../controllers/tmoatController');
 
-router.get('/', actorControll.getAll);
+router.get('/', topMovieControll.getAll);
 
 module.exports = router;
