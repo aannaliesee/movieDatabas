@@ -1,6 +1,7 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
+
 const getAll = async (req, res) => {
   try {
     const result = await mongodb.getDb().db().collection('genres').find();
@@ -13,7 +14,7 @@ const getAll = async (req, res) => {
     res.status(500).json({ error: 'There was an error while retrieving the genres.' });
   }
 };
+
 module.exports = {
   getAll,
-  
 };

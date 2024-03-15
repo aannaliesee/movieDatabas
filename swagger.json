@@ -2,13 +2,25 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Temple API",
+    "description": "Movie Api",
     "version": "1.0.0"
   },
   "host": "localhost:8080",
   "basePath": "/",
-  "schemes": [
-    "http"
+  "schemes": ["http"],
+  "tags": [
+    {
+      "name": "Directors"
+    },
+    {
+      "name": "Movies"
+    },
+    {
+      "name": "TMOAT"
+    },
+    {
+      "name": "Genres"
+    }
   ],
   "paths": {
     "/api-docs": {
@@ -24,9 +36,7 @@
     "/movies/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -34,15 +44,14 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "tags": ["Movies"]
       }
     },
     "/genres/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -50,15 +59,14 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "tags": ["Genres"]
       }
     },
     "/directors/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -66,15 +74,14 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "tags": ["Directors"]
       }
     },
     "/tmoat/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -82,7 +89,8 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "tags": ["TMOAT"]
       }
     }
   }
