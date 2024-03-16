@@ -5,9 +5,9 @@
     "description": "Movie Api",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "moviedatabase-aka3.onrender.com",
   "basePath": "/",
-  "schemes": ["http"],
+  "schemes": ["https"],
   "tags": [
     {
       "name": "Directors"
