@@ -1,1 +1,13 @@
-# hello 
+
+
+GET http://localhost:8080/movies HTTP/1.1
+
+###
+GET http://localhost:8080/genres HTTP/1.1
+
+###
+GET http://localhost:8080/directors HTTP/1.1
+
+###
+GET http://localhost:8080/tmoat HTTP/1.1
+ 
