@@ -4,8 +4,8 @@ const directorControll = require('../controllers/directorsController');
 
 router.get('/', directorControll.getAll);
 router.get('/:id', directorControll.getSingle);
-router.get('/', directorControll.createDirector);
-router.get('/:id', directorControll.updateDirector);
-router.get('/:id', directorControll.deleteDirector);
+router.post('/', directorControll.createDirector);
+router.put('/:id', directorControll.updateDirector);
+router.delete('/:id', directorControll.deleteDirector);
 
 module.exports = router;
