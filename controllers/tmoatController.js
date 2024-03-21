@@ -14,45 +14,47 @@ const getAll = async (req, res) => {
   }
 };
 
-const getSingle = (req, res) => {
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid movie id to find a movie.');
+const getSingle = async (req, res) => {
+  try {
+    const tmoatId = ObjectId.createFromHexString(req.params.id);
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection("tmoat")
+      .findOne({ _id: tmoatId });
+    if (!result) {
+      return res.status(404).json({ message: "tmoat not found" });
+    }
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(result); // Return the single document directly
+  } catch (error) {
+    console.error("Error getting tmoat by ID:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
-  const tmoatId = new ObjectId(req.params.id);
-  mongodb
-    .getDb().db().collection('tmoat').find({ _id: tmoatId })
-    .toArray((err, result) => {
-      if (err) {
-        res.status(400).json({ message: err });
-      }
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(result[0]);
-    });
 };
 
 const createTMOAT = async (req, res) => {
+  const tmoat = {
+    title: req.body.title,
+    year: req.body.year,
+    source: req.body.source,
+    authority: req.body.authority,
+    rank: req.body.rank,
+    plotSummary: req.body.plotSummary
+  };
+
   try {
-    // Use the middleware for validation
-   validateMovie(req, res, async () => {
-      const tmoat = {
-        title: req.body.title,
-        year: req.body.year,
-        source: req.body.source,
-        authority: req.body.authority,
-        rank: req.body.rank,
-        plotSummary: req.body.plotSummary
-      };
-      const response = await mongodb.getDb().db().collection('tmoat').insertOne(tmoat);
-      if (response.acknowledged) {
-        res.status(201).json(response);
-      } else {
-        handleErrors(response.error || 'Some error occurred while adding the movie.', res, 500);
-      }
-    });
+    const response = await mongodb.getDb().db().collection('tmoat').insertOne(tmoat);
+    if (response.acknowledged) {
+      res.status(201).json(response);
+    } else {
+      handleErrors(response.error || 'Some error occurred while adding the movie.', res, 500);
+    }
   } catch (error) {
     handleErrors(error, res);
   }
 };
+
 
 const updateTMOAT = async (req, res) => {
   try {
@@ -81,17 +83,26 @@ const updateTMOAT = async (req, res) => {
   
 const deleteTMOAT = async (req, res) => {
   try {
-      const tmoatId = new ObjectId(req.params.id);
-      const response = await mongodb.getDb().db().collection('tmoat').remove({ _id: tmoatId }, true);
-      if (response.deletedCount > 0) {
-          res.status(204).send();
-      } else {
-          handleErrors(response.error || 'Some error occurred while deleting the movie.', res, 500);
-      }
+    const tmoatId = new ObjectId(req.params.id);
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection('tmoat')
+      .deleteOne({ _id: tmoatId }, true);
+    console.log(response);
+
+    if (response.deletedCount > 0) {
+      res.status(204).send();
+    } else {
+      res.status(500).json(
+        response.error || "Some error occurred while deleting the genre."
+      );
+    }
   } catch (error) {
-      handleErrors(error, res);
+    handleErrors(error, res);
   }
 };
+
 
 module.exports = {
   getAll,
