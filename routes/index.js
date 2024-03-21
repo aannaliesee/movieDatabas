@@ -7,4 +7,4 @@ router.use('/genres', require('./genresRoutes'));
 router.use('/directors', require('./directorsRoutes'));
 router.use('/tmoat', require('./tmoatRoutes'));
 
-module.exports = router
+module.exports = router;
