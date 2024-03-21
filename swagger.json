@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Temple API",
+    "description": "Movies API",
     "version": "1.0.0"
   },
   "host": "moviedatabase-aka3.onrender.com",
