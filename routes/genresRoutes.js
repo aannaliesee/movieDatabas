@@ -4,8 +4,8 @@ const genreControll = require('../controllers/genresController');
 
 router.get('/', genreControll.getAll);
 router.get('/:id', genreControll.getGenresById);
-router.get('/', genreControll.createGenre);
-router.get('/:id', genreControll.updateGenre);
-router.get('/:id', genreControll.deleteGenre);
+router.post('/', genreControll.createGenre);
+router.put('/:id', genreControll.updateGenre);
+router.delete('/:id', genreControll.deleteGenre);
 
 module.exports = router;

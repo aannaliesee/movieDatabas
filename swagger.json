@@ -10,20 +10,6 @@
   "schemes": [
     "https"
   ],
-  "tags": [
-    {
-      "name": "Directors"
-    },
-    {
-      "name": "Movies"
-    },
-    {
-      "name": "TMOAT"
-    },
-    {
-      "name": "Genres"
-    }
-  ],
   "paths": {
     "/api-docs": {
       "get": {
@@ -48,8 +34,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "tags": ["Movies"]
+        }
       }
     },
     "/genres/": {
@@ -65,13 +50,27 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "tags": ["Genres"]
-      }
-    },
-    "/directors/": {
-      "get": {
+        }
+      },
+      "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "genre": {
+                  "example": "any"
+                },
+                "movies": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -79,12 +78,224 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "tags": ["Directors"]
+        }
+      }
+    },
+    "/genres/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "genre": {
+                  "example": "any"
+                },
+                "movies": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/directors/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "nationality": {
+                  "example": "any"
+                },
+                "dob": {
+                  "example": "any"
+                },
+                "awardName": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "movie": {
+                  "example": "any"
+                },
+                "moviesDirected": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/directors/{id}": {
       "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "nationality": {
+                  "example": "any"
+                },
+                "dob": {
+                  "example": "any"
+                },
+                "awardName": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "movie": {
+                  "example": "any"
+                },
+                "moviesDirected": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
         "description": "",
         "parameters": [
           {
@@ -110,16 +321,126 @@
     "/tmoat/": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "source": {
+                  "example": "any"
+                },
+                "authority": {
+                  "example": "any"
+                },
+                "rank": {
+                  "example": "any"
+                },
+                "plotSummary": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
           }
-        },
-        "tags": ["Top Movies Of All Time "]
+        }
       }
     },
     "/tmoat/{id}": {
       "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "source": {
+                  "example": "any"
+                },
+                "authority": {
+                  "example": "any"
+                },
+                "rank": {
+                  "example": "any"
+                },
+                "plotSummary": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
         "description": "",
         "parameters": [
           {
