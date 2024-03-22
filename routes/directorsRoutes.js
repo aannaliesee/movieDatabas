@@ -1,11 +1,13 @@
 const express = require('express')
 const router = express.Router();
 const directorControll = require('../controllers/directorsController');
+const { requiresAuth } = require("express-openid-connect");
+
 
 router.get('/', directorControll.getAll);
 router.get('/:id', directorControll.getSingle);
-router.get('/', directorControll.createDirector);
-router.get('/:id', directorControll.updateDirector);
-router.get('/:id', directorControll.deleteDirector);
+router.post('/', directorControll.createDirector);
+router.put('/:id', directorControll.updateDirector);
+router.delete('/:id', directorControll.deleteDirector);
 
 module.exports = router;
