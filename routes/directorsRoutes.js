@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router();
 const directorControll = require('../controllers/directorsController');
+const { requiresAuth } = require("express-openid-connect");
+
 
 router.get('/', directorControll.getAll);
 router.get('/:id', directorControll.getSingle);
