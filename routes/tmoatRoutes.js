@@ -7,8 +7,8 @@ const { requiresAuth } = require("express-openid-connect");
 
 router.get('/', topMovieControll.getAll);
 router.get('/:id', topMovieControll.getSingle);
-router.post('/', validate.topMovieControll.createTMOAT);
-router.put('/:id', validate.topMovieControll.updateTMOAT);
+router.post('/', validate.validateTMOAT, topMovieControll.createTMOAT);
+router.put('/:id', validate.validateTMOAT, topMovieControll.updateTMOAT);
 router.delete('/:id', topMovieControll.deleteTMOAT);
 
 module.exports = router;
