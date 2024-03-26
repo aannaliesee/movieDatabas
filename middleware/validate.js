@@ -24,7 +24,15 @@ const validateDirectors = (req, res, next) => {
         'awards.awardName': 'string',
         'awards.year': 'interger|min:1',
         'awards.movie': 'string',
-        moviesDirected: 'required|string|array' // required Allow both string and array types 
+        "moviesDirected": {
+            "oneOf": [
+                { "type": "string" },
+                { 
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            ]
+        } // required Allow both string and array types 
     }
     handleValidation(req, res, next, validationRule);
 };
