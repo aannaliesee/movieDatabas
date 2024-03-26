@@ -32,17 +32,17 @@ const validateDirectors = (req, res, next) => {
 const validateGenres = (req, res, next) => {
     const validationRule = {
         genre: 'required|string',
-        title: 'required|string',
-        directors: 'required|string|array', // required, allow both string and array
-        actors: 'required|array', // required
-        'actors.name': 'string',
-        'actors.role': 'string',
-        subgenre: 'array', // not required
-        releaseYear: 'required|integer|min:1800|max:2025', // allow only integers between 1800-2025
-        ratings: 'required|string', // required
-        runtime: 'string', //not required            
-        productionCo: 'string', //not required
-        plotSummary: 'string' // not required
+        movies: 'required|string',
+        // directors: 'required|string|array', // required, allow both string and array
+        // actors: 'required|array', // required
+        // 'actors.name': 'string',
+        // 'actors.role': 'string',
+        // subgenre: 'array', // not required
+        // releaseYear: 'required|integer|min:1800|max:2025', // allow only integers between 1800-2025
+        // ratings: 'required|string', // required
+        // runtime: 'string', //not required            
+        // productionCo: 'string', //not required
+        // plotSummary: 'string' // not required
     
         }
    handleValidation(req, res, next, validationRule);
