@@ -59,7 +59,7 @@
     },
     "/genres/": {
       "get": {
-        "tags": ["Movies"],
+        "tags": ["Genres"],
         "description": "",
         "produces": [
           "application/json"
@@ -74,7 +74,7 @@
         }
       },
       "post": {
-        "tags": ["Movies"],
+        "tags": ["Genres"],
         "description": "",
         "parameters": [
           {
