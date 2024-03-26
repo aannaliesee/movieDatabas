@@ -20,11 +20,10 @@ const validateDirectors = (req, res, next) => {
         name: 'required|string', //required
         nationality: 'required|string', //required
         dob: 'required|string', //required
-        awards: 'string', // not required not all may have awards
-        'awards.awardName': 'string',
-        'awards.year': 'interger|min:1',
-        'awards.movie': 'string',
-        "moviesDirected": {
+        awardName: 'string',
+        year: 'interger|min:1',
+        movie: 'string',
+        moviesDirected: {
             "oneOf": [
                 { "type": "string" },
                 { 
