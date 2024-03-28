@@ -10,7 +10,7 @@
   "schemes": [
     "https"
   ],
-  "tags": [
+"tags": [
     {
       "name": "Movies",
       "description": "Operations related to movies"
@@ -31,7 +31,7 @@
   "paths": {
     "/api-docs": {
       "get": {
-        "tags": ["Movies"],
+"tags": ["Movies"],
         "description": "",
         "responses": {
           "default": {
@@ -42,24 +42,7 @@
     },
     "/movies/": {
       "get": {
-        "tags": ["Movies"],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/genres/": {
-      "get": {
-        "tags": ["Genres"],
+"tags": ["Movies"],
         "description": "",
         "produces": [
           "application/json"
@@ -74,7 +57,160 @@
         }
       },
       "post": {
-        "tags": ["Genres"],
+        "tags": ["Movies"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "directors": {
+                  "example": "any"
+                },
+                "actors": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "ratings": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/movies/{id}": {
+      "tags": ["Movies"],
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Movies"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "directors": {
+                  "example": "any"
+                },
+                "actors": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "ratings": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Movies"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/genres/": {
+      "get": {
+"tags": ["Genres"],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+"tags": ["Genres"],
         "description": "",
         "parameters": [
           {
@@ -105,7 +241,7 @@
     },
     "/genres/{id}": {
       "get": {
-        "tags": ["Genres"],
+"tags": ["Genres"],
         "description": "",
         "produces": [
           "application/json"
@@ -131,7 +267,7 @@
         }
       },
       "put": {
-        "tags": ["Genres"],
+"tags": ["Genres"],
         "description": "",
         "parameters": [
           {
@@ -166,7 +302,7 @@
         }
       },
       "delete": {
-        "tags": ["Genres"],
+"tags": ["Genres"],
         "description": "",
         "parameters": [
           {
@@ -188,7 +324,7 @@
     },
     "/directors/": {
       "get": {
-        "tags": ["Directors"],
+"tags": ["Directors"],
         "description": "",
         "produces": [
           "application/json"
@@ -203,7 +339,7 @@
         }
       },
       "post": {
-        "tags": ["Directors"],
+"tags": ["Directors"],
         "description": "",
         "parameters": [
           {
@@ -249,7 +385,7 @@
     },
     "/directors/{id}": {
       "get": {
-        "tags": ["Directors"],
+"tags": ["Directors"],
         "description": "",
         "produces": [
           "application/json"
@@ -272,7 +408,7 @@
         }
       },
       "put": {
-        "tags": ["Directors"],
+"tags": ["Directors"],
         "description": "",
         "parameters": [
           {
@@ -325,7 +461,7 @@
         }
       },
       "delete": {
-        "tags": ["Directors"],
+"tags": ["Directors"],
         "description": "",
         "parameters": [
           {
@@ -350,7 +486,7 @@
     },
     "/tmoat/": {
       "get": {
-        "tags": ["Top Movies of All Time(TMOAT)"],
+"tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "produces": [
           "application/json"
@@ -365,7 +501,7 @@
         }
       },
       "post": {
-        "tags": ["Top Movies of All Time(TMOAT)"],
+"tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "parameters": [
           {
@@ -405,7 +541,7 @@
     },
     "/tmoat/{id}": {
       "get": {
-        "tags": ["Top Movies of All Time(TMOAT)"],
+"tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "produces": [
           "application/json"
@@ -422,13 +558,16 @@
           "200": {
             "description": "OK"
           },
-          "400": {
-            "description": "Bad Request"
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "tags": ["Top Movies of All Time(TMOAT)"],
+"tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "parameters": [
           {
@@ -475,7 +614,7 @@
         }
       },
       "delete": {
-        "tags": ["Top Movies of All Time(TMOAT)"],
+"tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "parameters": [
           {
@@ -488,6 +627,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
