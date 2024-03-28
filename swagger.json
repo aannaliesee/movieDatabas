@@ -99,8 +99,8 @@
       }
     },
     "/movies/{id}": {
-      "tags": ["Movies"],
       "get": {
+        "tags": ["Movies"],
         "description": "",
         "produces": [
           "application/json"
@@ -195,7 +195,7 @@
     },
     "/genres/": {
       "get": {
-"tags": ["Genres"],
+        "tags": ["Genres"],
         "description": "",
         "produces": [
           "application/json"
@@ -210,7 +210,7 @@
         }
       },
       "post": {
-"tags": ["Genres"],
+        "tags": ["Genres"],
         "description": "",
         "parameters": [
           {
@@ -241,7 +241,7 @@
     },
     "/genres/{id}": {
       "get": {
-"tags": ["Genres"],
+        "tags": ["Genres"],
         "description": "",
         "produces": [
           "application/json"
@@ -267,7 +267,7 @@
         }
       },
       "put": {
-"tags": ["Genres"],
+        "tags": ["Genres"],
         "description": "",
         "parameters": [
           {
@@ -302,7 +302,7 @@
         }
       },
       "delete": {
-"tags": ["Genres"],
+        "tags": ["Genres"],
         "description": "",
         "parameters": [
           {
@@ -324,7 +324,7 @@
     },
     "/directors/": {
       "get": {
-"tags": ["Directors"],
+        "tags": ["Directors"],
         "description": "",
         "produces": [
           "application/json"
@@ -339,7 +339,7 @@
         }
       },
       "post": {
-"tags": ["Directors"],
+        "tags": ["Directors"],
         "description": "",
         "parameters": [
           {
@@ -385,7 +385,7 @@
     },
     "/directors/{id}": {
       "get": {
-"tags": ["Directors"],
+        "tags": ["Directors"],
         "description": "",
         "produces": [
           "application/json"
@@ -408,7 +408,7 @@
         }
       },
       "put": {
-"tags": ["Directors"],
+        "tags": ["Directors"],
         "description": "",
         "parameters": [
           {
@@ -461,7 +461,7 @@
         }
       },
       "delete": {
-"tags": ["Directors"],
+        "tags": ["Directors"],
         "description": "",
         "parameters": [
           {
@@ -486,7 +486,7 @@
     },
     "/tmoat/": {
       "get": {
-"tags": ["Top Movies of All Time(TMOAT)"],
+        "tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "produces": [
           "application/json"
@@ -501,7 +501,7 @@
         }
       },
       "post": {
-"tags": ["Top Movies of All Time(TMOAT)"],
+        "tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "parameters": [
           {
@@ -541,7 +541,7 @@
     },
     "/tmoat/{id}": {
       "get": {
-"tags": ["Top Movies of All Time(TMOAT)"],
+        "tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "produces": [
           "application/json"
@@ -567,7 +567,7 @@
         }
       },
       "put": {
-"tags": ["Top Movies of All Time(TMOAT)"],
+      "tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "parameters": [
           {
@@ -614,7 +614,7 @@
         }
       },
       "delete": {
-"tags": ["Top Movies of All Time(TMOAT)"],
+        "tags": ["Top Movies of All Time(TMOAT)"],
         "description": "",
         "parameters": [
           {
