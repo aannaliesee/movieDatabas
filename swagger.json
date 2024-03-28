@@ -31,7 +31,7 @@
   "paths": {
     "/api-docs": {
       "get": {
-"tags": ["Movies"],
+        "tags": ["Movies"],
         "description": "",
         "responses": {
           "default": {
@@ -42,7 +42,7 @@
     },
     "/movies/": {
       "get": {
-"tags": ["Movies"],
+        "tags": ["Movies"],
         "description": "",
         "produces": [
           "application/json"
