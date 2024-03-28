@@ -71,7 +71,15 @@ const validateMovies = (req, res, next) => {
         actors: 'required|array', // required
         'actors.name': 'string',
         'actors.role': 'string',
-        genre: 'required|string',
+        genre: {
+            "oneOf": [
+                { "type": "string" },
+                { 
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            ]
+        }, // required Allow both string and array types 
         subgenre: 'array', // not required
         releaseYear: 'required|integer|min:1800|max:2025', // allow only integers between 1800-2025
         ratings: 'required|string', // required
