@@ -5,7 +5,7 @@ const validate = require('../middleware/validate');
 const { requiresAuth } = require("express-openid-connect");
 
 
-router.get('/',  genreControll.getAll);
+router.get('/', requiresAuth(), genreControll.getAll);
 router.get('/:id', genreControll.getGenresById);
 router.post('/', validate.validateGenres, genreControll.createGenre);
 router.put('/:id', validate.validateGenres, genreControll.updateGenre);
