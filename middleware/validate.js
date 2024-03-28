@@ -58,7 +58,16 @@ const validateGenres = (req, res, next) => {
 const validateMovies = (req, res, next) => {
     const validationRule = {
         title: 'required|string',
-        directors: 'required|string|array', // required, allow both string and array
+        directors: {
+            "oneOf": [
+                { "type": "string" },
+                { 
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            ]
+        }, // required Allow both string and array types 
+     
         actors: 'required|array', // required
         'actors.name': 'string',
         'actors.role': 'string',
