@@ -43,7 +43,7 @@ describe("Test Director Handlers", () => {
             moviesDirected: ["The Notebook"],
 
         };
-        const res = await request(server).put(`/directors/{dirId}`).send(change);
+        const res = await request(server).put(`/directors/${dirId}`).send(change);
         expect(res.statusCode).toBe(202)
     });
 
