@@ -43,10 +43,10 @@ const createDirector = async (req, res) => {
       {
         awardName: req.body.awardName,
         year: req.body.year,
-        movie: req.body.movie
+        movie: req.body.movie,
       }
     ],
-    moviesDirected: req.body.moviesDirected
+    moviesDirected: [req.body.moviesDirected],
   };
   const response = await mongodb.getDb().db().collection('directors').insertOne(director);
   if(response.acknowledged) {
@@ -69,10 +69,10 @@ const updateDirector = async (req, res) => {
         {
           awardName: req.body.awardName,
           year: req.body.year,
-          movie: req.body.movie
+          movie: req.body.movie,
         }
       ],
-      moviesDirected: req.body.moviesDirected
+      moviesDirected: [req.body.moviesDirected],
     };
 
 
