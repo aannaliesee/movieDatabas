@@ -22,7 +22,7 @@ describe('insert', () => {
     const users = db.collection('movies');
 
     const mockUser = {
-                       title: 'fire',
+                       title: 'wind',
                        directors: 'Penelope', // required, allow both string and array
                        actors: 'Juliet', // required
                        genre: 'RomCom',
@@ -31,7 +31,7 @@ describe('insert', () => {
     }
     await users.insertOne(mockUser);
 
-    const insertedUser = await users.findOne({title: "fire"});
+    const insertedUser = await users.findOne({title: "wind"});
     expect(insertedUser).toEqual(mockUser);
   });
 });

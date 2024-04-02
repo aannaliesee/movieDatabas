@@ -1,13 +1,13 @@
-const server = require('.../server')
-const supertest = require('supertest');
+const app = require('../server')
+const request = require('supertest');
 const { expect } = require('@jest/globals');
-const request = supertest(server);
+// const request = supertest(server);
 
 
 // GET test
 describe("Test Director Handlers", () => {
     test('responds to /directors', async () => {
-        const res = await request(server).get('/directors');
+        const res = await request(app).get('/directors');
         expect(res.header['content-type']).toBe('application/json; charset=utf-8');
         expect(res.statusCode).toBe(200)
     })
@@ -27,7 +27,7 @@ describe("Test Director Handlers", () => {
             ],
             moviesDirected: ["Harry Potter"],
         };
-        const res = await request(server).post('/directors').send(newDir);     
+        const res = await request(app).post('/directors').send(newDir);     
         expect(res.header['content-type']).toBe('application/json; charset=utf-8');
         expect(res.statusCode).toBe(201)
     });
@@ -43,7 +43,7 @@ describe("Test Director Handlers", () => {
             moviesDirected: ["The Notebook"],
 
         };
-        const res = await request(server).put(`/directors/${dirId}`).send(change);
+        const res = await request(app).put(`/directors/${dirId}`).send(change);
         expect(res.statusCode).toBe(202)
     });
 
