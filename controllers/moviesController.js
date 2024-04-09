@@ -16,6 +16,7 @@ const getAll = async (req, res) => {
 
 const getMovieById = async (req, res) => {
   try {
+    console.log(req.params.id)
     const movieId = ObjectId.createFromHexString(req.params.id);
     const result = await mongodb
       .getDb()

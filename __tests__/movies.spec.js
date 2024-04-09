@@ -1,4 +1,5 @@
 const {MongoClient} = require('mongodb');
+// const mongodb = require('./db/connect');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -22,7 +23,7 @@ describe('insert', () => {
     const users = db.collection('movies');
 
     const mockUser = {
-                       title: 'magenta',
+                       title: 'Triangle',
                        directors: 'Penelope', // required, allow both string and array
                        actors: 'Juliet', // required
                        genre: 'RomCom',
@@ -31,7 +32,7 @@ describe('insert', () => {
     }
     await users.insertOne(mockUser);
 
-    const insertedUser = await users.findOne({title: "magenta"});
+    const insertedUser = await users.findOne({title: "Triangle"});
     expect(insertedUser).toEqual(mockUser);
   });
 });
