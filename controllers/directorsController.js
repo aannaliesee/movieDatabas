@@ -46,6 +46,7 @@ const createDirector = async (req, res) => {
         movie: req.body.movie,
       }
     ],
+
     moviesDirected: [req.body.moviesDirected,]
   };
   const response = await mongodb.getDb().db().collection('directors').insertOne(director);
@@ -72,6 +73,7 @@ const updateDirector = async (req, res) => {
           movie: req.body.movie,
         }
       ],
+
       moviesDirected: [req.body.moviesDirected,]
     };
 
