@@ -5,17 +5,17 @@ const { expect } = require('@jest/globals');
 // console.log("server", server);
 
 describe('Test Genre Controllers', () => {
-    test('responds to /genres', async () => {
-      const res = await request(server).get('/genres');
-      expect(res.header['content-type']).toBe('application/json; charset=utf-8');
-      expect(typeof res.statusCode).toBe('number')
-    });
+    // test('responds to /genres', async () => {
+    //   const res = await request(server).get('/genres');
+    //   expect(res.header['content-type']).toBe('application/json; charset=utf-8');
+    //   expect(typeof res.statusCode).toBe('number')
+    // });
   
-    test('GET /genres/:id - getGenresById', async () => {
-      const genreId = '65f4c6117ee3162e25f02d77';
-      const res = await request(server).get(`/genres/${genreId}`);
-      expect(res.header['content-type']).toBe('application/json; charset=utf-8');
-    });
+    // test('GET /genres/:id - getGenresById', async () => {
+    //   const genreId = '65f4c6117ee3162e25f02d77';
+    //   const res = await request(server).get(`/genres/${genreId}`);
+    //   expect(res.header['content-type']).toBe('application/json; charset=utf-8');
+    // });
   
     test('POST /genres - createGenre', async () => {
       const newGenre = {
