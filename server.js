@@ -29,18 +29,9 @@ mongodb.initDb((err) => {
     console.log(err);
   } else {
     app.listen(port);
-    console.log(`Connected to DB and listening on ${port}`);
+    // console.log(`Connected to DB and listening on ${port}`);
   }
 });
 
-app
-  .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
-  })
-  .use('/', require('./routes'));
 
-
-
-module.exports = app;
+module.exports = app; 

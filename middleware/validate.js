@@ -19,12 +19,19 @@ const validateDirectors = (req, res, next) => {
     const validationRule = {
         name: 'required|string', //required
         nationality: 'required|string', //required
-        dob: 'required|integer|min:1', //required
-        awards: 'string', // not required not all may have awards
-        'awards.awardName': 'string',
-        'awards.year': 'interger|min:1',
-        'awards.movie': 'string',
-        moviesDirected: 'required|string|array' // required Allow both string and array types 
+        dob: 'required|string', //required
+        awardName: 'string',
+        year: 'interger|min:1',
+        movie: 'string',
+        moviesDirected: {
+            "oneOf": [
+                { "type": "string" },
+                { 
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            ]
+        } // required Allow both string and array types 
     }
     handleValidation(req, res, next, validationRule);
 };
@@ -32,17 +39,17 @@ const validateDirectors = (req, res, next) => {
 const validateGenres = (req, res, next) => {
     const validationRule = {
         genre: 'required|string',
-        title: 'required|string',
-        directors: 'required|string|array', // required, allow both string and array
-        actors: 'required|array', // required
-        'actors.name': 'string',
-        'actors.role': 'string',
-        subgenre: 'array', // not required
-        releaseYear: 'required|integer|min:1800|max:2025', // allow only integers between 1800-2025
-        ratings: 'required|string', // required
-        runtime: 'string', //not required            
-        productionCo: 'string', //not required
-        plotSummary: 'string' // not required
+        movies: 'required|string',
+        // directors: 'required|string|array', // required, allow both string and array
+        // actors: 'required|array', // required
+        // 'actors.name': 'string',
+        // 'actors.role': 'string',
+        // subgenre: 'array', // not required
+        // releaseYear: 'required|integer|min:1800|max:2025', // allow only integers between 1800-2025
+        // ratings: 'required|string', // required
+        // runtime: 'string', //not required            
+        // productionCo: 'string', //not required
+        // plotSummary: 'string' // not required
     
         }
    handleValidation(req, res, next, validationRule);
@@ -51,11 +58,28 @@ const validateGenres = (req, res, next) => {
 const validateMovies = (req, res, next) => {
     const validationRule = {
         title: 'required|string',
-        directors: 'required|string|array', // required, allow both string and array
+        directors: {
+            "oneOf": [
+                { "type": "string" },
+                { 
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            ]
+        }, // required Allow both string and array types 
+     
         actors: 'required|array', // required
         'actors.name': 'string',
         'actors.role': 'string',
-        genre: 'required|string',
+        genre: {
+            "oneOf": [
+                { "type": "string" },
+                { 
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            ]
+        }, // required Allow both string and array types 
         subgenre: 'array', // not required
         releaseYear: 'required|integer|min:1800|max:2025', // allow only integers between 1800-2025
         ratings: 'required|string', // required
